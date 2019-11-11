@@ -1,0 +1,19 @@
+jobs:
+- deployment:
+  displayName: Deploy to AKS
+  pool:
+    vmImage: ubuntu-latest
+  environment: contoso.aksnamespace
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+        - checkout: self     
+        - task: KubernetesManifest@0
+          displayName: Deploy
+          inputs:
+            action: deploy
+            namespace: aksnamespace
+            manifests: manifests/deployment.yml
+            containers: |
+              httpd
