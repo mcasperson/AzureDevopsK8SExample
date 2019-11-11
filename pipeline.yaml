@@ -12,8 +12,8 @@ jobs:
         - task: KubernetesManifest@0
           displayName: Deploy
           inputs:
-            action: deploy
-            namespace: azure-development
-            manifests: manifests/deployment.yml
-            containers: |
-              httpd
+            action: 'deploy'
+            kubernetesServiceConnection: 'Dev-default-1573432664222'
+            namespace: 'azure-development'
+            manifests: 'manifests/deployment.yml'
+            containers: 'httpd'
