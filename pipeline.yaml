@@ -15,5 +15,5 @@ jobs:
             action: 'deploy'
             kubernetesServiceConnection: 'Dev-default-1573432664222'
             namespace: 'azure-development'
-            manifests: 'deployment.yml'
+            manifests: 'deployment.yaml'
             containers: 'httpd'
