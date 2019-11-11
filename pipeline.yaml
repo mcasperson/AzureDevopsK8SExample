@@ -3,7 +3,7 @@ jobs:
   displayName: Deploy to AKS
   pool:
     vmImage: ubuntu-latest
-  environment: contoso.aksnamespace
+  environment: dev
   strategy:
     runOnce:
       deploy:
@@ -13,7 +13,7 @@ jobs:
           displayName: Deploy
           inputs:
             action: deploy
-            namespace: aksnamespace
+            namespace: azure-development
             manifests: manifests/deployment.yml
             containers: |
               httpd
